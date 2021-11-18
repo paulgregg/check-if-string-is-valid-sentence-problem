@@ -3,6 +3,11 @@ const {isStringASentence} = require("../src/StringUtils")
 //I like module tests to be scoped per function, personal preference
 //I also like having strings as const's instead of inline for readability, personal preference
 describe('isStringASentence', () => {
+    test('does not error out if non string (e.g number or undefined) passed in', () => {
+        isStringASentence(undefined)
+        isStringASentence(1)
+    })
+
     test('example sentences from brief return true', () => {
         const case1 = "The quick brown fox said \"hello Mr lazy dog\"."
         const case2 = "The quick brown fox said hello Mr lazy dog."

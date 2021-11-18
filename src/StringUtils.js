@@ -1,5 +1,7 @@
 //function that takes a string and returns a boolean as to whether it is a valid sentence
 export const isStringASentence = (string) => {
+    //unlikely edge case that passed 'string' isn't of type string. Spec mentions using in prod by other teams and not typescript so can't guarantee string passed
+    if (typeof string !== 'string') return false
     let speechMarksCount = 0
     let currentNumber = ""
     const stringLength = string.length
